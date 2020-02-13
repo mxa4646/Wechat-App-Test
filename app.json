@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/weather/weather",
     "pages/city/city",
     "pages/about/about"
