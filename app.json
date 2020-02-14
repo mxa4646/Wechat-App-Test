@@ -5,10 +5,36 @@
     "pages/about/about"
   ],
   "window": {
+    "backgroundColor":"#666",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "天气预报",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#56abe4",
+    "backgroundColor": "#ddd",
+    "borderStyle": "black",
+
+    "list": [{
+      "pagePath": "pages/weather/weather",
+      "iconPath": "images/c1.png",
+      "selectedIconPath": "images/c10.png",
+      "text": "天气预报"
+      }, {
+        "pagePath": "pages/city/city",
+        "iconPath": "images/c11.png",
+        "selectedIconPath": "images/c12.png",
+        "text": "设置城市"
+      }, {
+        "pagePath": "pages/about/about",
+        "iconPath": "images/c13.png",
+        "selectedIconPath": "images/c14.png",
+        "text": "关于我"
+      }],
+      "position": "bottom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
