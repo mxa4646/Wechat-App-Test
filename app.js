@@ -11,7 +11,14 @@ App({
     that.setlocal('curid', that.curid);//调用全局方法
 
   },
-  globalData: {
-    userInfo: null
-  }
+  //自定义全局方法
+  setlocal: function (id, val) {
+    wx.setStorageSync(id, val);//API：设置本地缓存
+  },
+  //自定义全局属性
+  curid: "CN101010100",
+  version: "1.0"
+  // globalData: {
+  //   userInfo: null
+  // }
 })
