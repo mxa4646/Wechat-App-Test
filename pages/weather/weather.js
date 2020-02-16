@@ -41,6 +41,27 @@ Page({
       that.setData({ suggestion: d.suggestion })//更新数据
     })
   },
+  //3、自定义页面方法：获取当前天气API
+  getnow: function (fn) {
+    wx.request({//请求服务器，类似ajax
+      url: 'https://www.xiaoguge.cn/api/wxtest/now.php',
+      data: { city: app.curid, key: '01a7798b060b468abdad006ea3de4713' },//和风天气提供用户key，可自行注册获得
+      header: { 'Content-Type': 'application/json' },
+      success: function (res) { fn(res.data.HeWeather5[0]); }//成功后将数据传给回调函数执行
+    })
+  },
+
+  //获取生活指数API
+  getsuggestion: function (fn) {
+    wx.request({
+      url: 'https://www.xiaoguge.cn/api/wxtest/suggestion.php',
+      data: { city: app.curid, key: '01a7798b060b468abdad006ea3de4713' },
+      header: { 'Content-Type': 'application/json' },
+      success: function (res) { fn(res.data.HeWeather5[0]); }
+    })
+  },
+  //4、页面事件绑定部分
+  bindViewTap: function () { wx.switchTab({ url: '../city/city' }) },//跳转菜单页面 
 
   /**
    * 生命周期函数--监听页面隐藏
