@@ -31,7 +31,7 @@ Page({
    */
   onShow: function () {
     var that = this;
-    wx.showToast({ title: '加载中', icon: 'loading', duration: 10000 })//设置加载模态框
+    wx.showToast({ title: '加载中', icon: 'loading', duration: 1000 })//设置加载模态框
     that.getnow(function (d) {//获取到数据的回调函数
       wx.hideToast();
       d.now.cond.src = "http://files.heweather.com/cond_icon/" + d.now.cond.code + ".png";
